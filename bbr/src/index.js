@@ -5,7 +5,10 @@ import App from './App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import { fetchEntries } from './features/entries/entryAPI';
+import {populateEntries} from './features/entries/entrySlice';
 
+store.dispatch(populateEntries());
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
